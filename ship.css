@@ -1,0 +1,270 @@
+body {
+  background-color: black;
+}
+
+.center {
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+margin: auto;
+}
+
+.ship {
+  --wave-color: rgb(33, 33, 152);
+  
+  position: relative;
+  height: 600px;
+  width: 800px;
+
+  --dark-grey: #888;
+  --light-gray: #d9d9d9;
+
+  transform: scale(.75) translateY(-140px);
+}
+
+/* Ship Top */
+.ship .ship-top {
+  height: 8px;
+  width: 50px;
+
+  background-color: var(--dark-grey);
+  transform: translate(420px, 176px);
+}
+
+/* Level 0 */
+.ship .ship-levels .level0 {
+  position: absolute;
+  display: inline-block;
+  
+  margin-left: 380px;
+}
+
+.ship .ship-levels .level0 .level0-top {
+  display: inline-block;
+  height: 100px;
+  width: 10px;
+  margin-top: 165px;
+
+  background-color: var(--light-gray);
+  transform: translate(60px, -20px) ;
+}
+
+.ship .ship-levels .level0 .level0-top::before {
+  content: "";
+  display: inline-block;
+  height: 40px;
+  width: 15px;
+
+  background-color: var(--dark-grey);
+  
+  transform: translate(-38px, 60px);
+}
+
+.ship .ship-levels .level0 .level0-top::after {
+  content: "";
+  display: inline-block;
+  height: 50px;
+  width: 20px;
+
+  background-color: var(--dark-grey);
+  transform: translate(35px, 5px);
+}
+
+.ship .ship-levels .level0 .level0-base {
+  display: inline-block;
+  
+  height: 15px;
+  width: 115px;
+  margin-top: 275px;
+  
+  background-color: var(--light-gray);
+}
+
+.ship .ship-levels .level0 .level0-base::after {
+  content: "";
+  display: inline-block;
+  height: inherit;
+  width: 20px;
+
+  background-color: var(--light-gray);
+  transform-origin: right bottom;
+  transform: skew(25deg) translateX(105px);
+}
+
+/* Level 1 */
+.ship .ship-levels .level1 {
+  position: absolute;
+  display: inline-block;
+  margin-top: 290px;
+  margin-left: 230px;
+}
+
+.ship .ship-levels .level1 .level1-after {
+  display: inline-block;
+  
+  height: 20px;
+  width: 150px;
+  
+  background-color: var(--dark-grey);
+  transform: translateX(150px);
+}
+
+.ship .ship-levels .level1 .level1-after::before {
+  content: "";
+  display: inline-block;
+  height: inherit;
+  width: 20px;
+
+  border: 1px solid var(--dark-grey);
+  border-left: 0;
+  border-bottom: 0;
+  border-top-color: transparent;
+  border-top-width: 20px;
+  border-right-width: 20px;
+  transform: translateX(-40px);
+  
+} 
+
+.ship .ship-levels .level1 .level1-after::after {
+  content: "";
+  display: inline-block;
+  height: inherit;
+  width: 20px;
+
+  border: 1px solid var(--dark-grey);
+  border-right: 0;
+  border-bottom: 0;
+  border-top-color: transparent;
+  border-top-width: 20px;
+  border-left-width: 20px;
+  transform: translateX(110px);
+}
+
+.ship .ship-levels .level1 .level2-before {
+  transform: translateX(50px);
+}
+
+.ship .ship-levels .level1 .level2-before::before {
+  content: "";
+ 
+  transform: translateX(-33px);
+}
+
+/* Level 2 */
+.ship .ship-levels .level2 {
+  position: absolute;
+  margin-top: 310px;
+  margin-left: 210px;
+}
+
+.level2-before {
+  position: absolute;
+  display: inline-block;
+  
+  height: 40px;
+  width: 60px;
+ 
+  background-image: radial-gradient(var(--light-gray) 75%, transparent 25%);
+  background-position: 0px 5px;
+  background-repeat: no-repeat;
+}
+
+.level2-before::before {
+  content: "";
+  display: inline-block;
+  height: inherit;
+  width: 35px;
+
+  background-image: linear-gradient(17deg, transparent 40%,var(--light-gray) 45%, transparent 55%);
+  background-position: 0px -15px;
+}
+
+.ship .ship-levels .level2 .level2-center {
+  display: inline-block;
+  
+  height: 20px;
+  width: 360px;
+  
+  background-color: var(--light-gray);
+}
+
+.ship .ship-levels .level2 .level2-center::before {
+  content: "";
+  display: inline-block;
+  height: inherit;
+  width: 20px;
+
+  background-image: linear-gradient(110deg, transparent 50%, var(--light-gray) 50%);
+}
+
+.ship .ship-levels .level2 .level2-center::after {
+  content: "";
+  display: inline-block;
+  height: inherit;
+  width: 20px;
+
+  background-image: linear-gradient(70deg, var(--light-gray) 50%, transparent 50%);
+  transform: translateX(340px);
+}
+
+.ship .ship-levels .level2 .level2-before {
+  transform: translateX(-70px);
+}
+
+.ship .ship-levels .level2 .level2-before::before {
+  content: "";
+  
+  transform: translateX(-33px);
+}
+
+.ship .ship-levels .level2 .level2-after {
+  position: absolute;
+  display: inline-block;
+  height: 40px;
+  width: 60px;
+ 
+  transform: translateX(30px);
+
+  background-image: radial-gradient(var(--light-gray) 75%, transparent 25%);
+  background-position: 0px 5px;
+  background-repeat: no-repeat;
+}
+
+.ship .ship-levels .level2 .level2-after::after {
+  content: "";
+  display: inline-block;
+  height: inherit;
+  width: 35px;
+
+  background-image: linear-gradient(160deg, transparent 40%,var(--light-gray) 45%, transparent 55%);
+  background-position: 0px 30px;
+  transform: translateX(60px);
+}
+
+/* Ship Base */
+
+.ship .ship-base {
+  position: absolute;
+  height: 80px;
+  width: 600px;
+  margin-top: 330px;
+  margin-left: 120px;
+
+  border-radius: 0 0 70px 0;
+  background-image: linear-gradient(var(--dark-grey) 60%, brown 40%);
+}
+
+.ship .ship-base::before {
+  content: "";
+  display: block;
+
+  width: 70px;
+  height: 55px;
+  
+  background-image: radial-gradient(closest-corner at 35% 55%, transparent 100%, var(--dark-grey) 0%);
+  background-size: 140% 180%;
+  background-position: -12px 0px;
+  background-repeat: no-repeat;
+  transform: translateX(-70px);
+}

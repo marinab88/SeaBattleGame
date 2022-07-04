@@ -1,0 +1,232 @@
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+/*absolut center*/
+.center {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+.l-header {
+  background: #222;
+  height: 20vh;
+  color: aquamarine;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 30px;
+}
+
+.l-content {
+  background: #333;
+  height: 60vh;
+}
+
+.l-footer {
+  background: #444;
+  height: 20vh;
+}
+
+.sea {
+  --wave-color: rgb(33, 33, 152);
+
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  background: linear-gradient(var(--wave-color), rgb(5, 5, 44) 50%);
+
+  perspective: 500px;
+  perspective-origin: center top;
+  cursor: none;
+}
+
+.sea .layer {
+  position: absolute;
+  top: 0;
+  right: -50%;
+  bottom: 0;
+  left: -50%;
+}
+
+.sea .wave-top {
+  height: 100px;
+
+  background-image: radial-gradient(rgb(4, 4, 140) 47%, transparent 48%);
+  background-position: 100px 40px;
+  background-size: 200px 300px;
+  background-repeat: repeat-x;
+}
+
+.sea .wave-bottom {
+  height: 100px;
+
+  background-image: radial-gradient(transparent 59%, rgb(4, 4, 140) 60%);
+  background-position: 0 -220px;
+  background-size: 200px 300px;
+}
+
+.sea .wave {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  height: 100px;
+  background-color: var(--wave-color);
+}
+
+.sea .wave::before {
+  content: '';
+  display: block;
+
+  height: 100px;
+
+  background-image: radial-gradient(var(--wave-color) 47%, transparent 48%);
+  background-position: 100px 40px;
+  background-size: 200px 270px;
+  background-repeat: repeat-x;
+
+  transform: translateY(-138px);
+}
+
+.sea .wave::after {
+  content: '';
+  display: block;
+
+  height: 100px;
+
+  background-image: radial-gradient(transparent 59%, var(--wave-color) 60%);
+  background-position: 0 -220px;
+  background-size: 200px 280px;
+  background-repeat: repeat-x;
+
+  transform: translateY(-138px);
+}
+
+/*   Scope   */
+.scope {
+  --scope-color: #4F48;
+
+  width: 200px;
+  height: 200px;
+  border: 2px solid var(--scope-color);
+  border-radius: 100%;
+  color: var(--scope-color);
+  font-size: 40px;
+  position: absolute;
+  bottom: 10px;
+  z-index: 11;
+  cursor: none;
+}
+
+.scope .mid {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+
+  text-align: center;
+  line-height: 200px;
+}
+
+.scope .h {
+  width: 400px;
+  height: 200px;
+  position: absolute;
+
+  line-height: 190px;
+  letter-spacing: 175px;
+}
+
+.scope .v {
+  width: 200px;
+  height: 400px;
+  position: absolute;
+
+  line-height: 210px;
+  letter-spacing: 175px;
+  writing-mode: vertical-lr;
+}
+
+
+/* Explosion efect */
+
+.explosion {
+  width: 300px;
+  height: 300px;
+
+  display: grid;
+  grid: 1fr 1fr 1fr / 1fr 1fr 1fr;
+  transform: translate(250px, 20px);
+  /* z-index: 13; */
+} 
+
+.fire-bottom-sm {
+  grid-column-start: 2;
+  grid-row-start: 3;
+
+  background-image: radial-gradient(rgb(249, 249, 144) 40%, transparent 70%);
+  background-size: 100px;
+  background-repeat: no-repeat;
+  z-index: 1;
+
+  animation: fire-sm 1s linear;
+  animation-fill-mode: forwards;
+  background-position-x: center;
+} 
+
+.fire-bottom-md {
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 4;
+
+  background-position: 0px 60px;
+  background-repeat: no-repeat;
+  background-image: radial-gradient(rgb(246, 205, 90) 40%, transparent 70%);
+
+  animation: fire-md 1s linear;
+  animation-fill-mode: forwards;
+  background-position-x: center;
+  opacity: 0;
+}
+
+@keyframes fire-sm {
+  0%  { 
+    background-image: radial-gradient(rgb(249, 249, 144) 40%, transparent 70%);
+    background-size: 0 0;
+    background-position-y: 100px;
+    opacity: 0;
+    }
+  10% {
+    background-image: radial-gradient(rgb(249, 249, 144) 40%, transparent 70%);
+    background-size: 100% 100%;
+    background-position-y: 0;
+    opacity: 1;
+  }
+  100% {
+    background-image: radial-gradient(rgb(249, 249, 144) 40%, transparent 70%);
+    background-size: 0 0;
+    background-position-y: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes fire-md {
+  0% {
+    background-position-y: 200px;
+    background-size: 0 0;
+    opacity: 0;
+  }
+  15% {
+    background-position-y: 0px;
+    background-size: 100% 100%;
+    opacity: 1;
+  }
+  100% {
+    background-position-y: 250px;
+    background-size: 150% 20%;
+    opacity: 0;
+
+  }
+}

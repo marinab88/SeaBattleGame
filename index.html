@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="torpedo.css">
+  <link rel="stylesheet" href="ship.css">
+  <link rel="stylesheet" href="layers.css">
+  <title>Sea Battle</title>
+</head>
+<body onkeydown="shoot(event)">
+
+  <header class="l-header">Sea Battle</header>
+
+  <section class="l-content">
+    <div class="sea" onmousemove="moveScope(event)">
+
+      <!--<div class="wave"></div>
+      <div class="wave-top"></div>
+      <div class="wave-bottom"></div>
+      </div>-->
+
+      <!-- <div class="torpedo reverse">
+        <div class="head center"></div>
+        <div class="body center"></div>
+        <div class="tail-v center"></div>
+        <div class="tail-h center"></div>
+        <div class="tail center"></div>
+      </div> -->
+
+      <!-- target / scope
+          explosion / animated
+          radar    -->
+
+          <!-- <div class="scope">
+            <div class="mid">+</div>
+            <div class="h">--</div>
+            <div class="v">--</div>
+          </div> -->
+
+          <!-- <div class="explosion">
+            <div class="fire-bottom-sm"></div>
+            <div class="fire-bottom-md"></div>
+          </div> -->
+
+          <!-- Radar -->
+
+          <!-- <div class="radar">
+            <div class="radar-container center">
+              <div class="circle1 center ">
+                
+                <hr class="line1"></hr>
+                <hr class="line2"></hr>
+                <hr class="line3"></hr>
+                <hr class="line4"></hr>
+                
+              </div>
+              <div class="circle2 center"></div>
+              <div class="circle3 center"></div>
+              <div class="circle4 center"></div>
+              <div class="radar-light"></div>
+            </div> 
+          </div> -->
+                  
+
+      </div>
+  </section>
+
+  <footer class="l-footer" id="score"></footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
